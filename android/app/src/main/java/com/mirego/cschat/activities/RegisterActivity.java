@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.InterpolatorRes;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.view.ViewGroup;
@@ -92,7 +93,11 @@ public class RegisterActivity extends BaseActivity {
                             progressDialog.dismiss();
                             SharedPreferences sharedPreferences = getSharedPreferences(getPackageName(), MODE_PRIVATE);
                             sharedPreferences.edit().putString(Prefs.KEY_USER_ID, user.getId()).apply();
-                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                            Bundle bun = new Bundle();
+                            bun.putString("username", user.getUsername());
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            intent.putExtras(bun);
+                            startActivity(intent);
                         }
                     }, new Consumer<Throwable>() {
                         @Override

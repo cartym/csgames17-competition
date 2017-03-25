@@ -55,9 +55,18 @@ public class LoginActivity extends BaseActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage(getString(R.string.login_loading));
 
-        if (BuildConfig.DEBUG) {
+        Bundle bun = getIntent().getExtras();
+        String username = "";
+        try {
+            username = bun.getString("username");
+        } catch (Exception e) {
+        }
+
+        if (BuildConfig.DEBUG && username.equals("") ) {
             etUsername.setText("horace");
             etPassword.setText("draught146");
+        } else if (!username.equals("")) {
+            etUsername.setText(username);
         }
 
     }
