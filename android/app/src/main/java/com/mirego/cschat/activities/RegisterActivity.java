@@ -63,7 +63,7 @@ public class RegisterActivity extends BaseActivity {
 
         ((CSChatApplication) getApplication()).component().inject(this);
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage(getString(R.string.login_loading));
+        progressDialog.setMessage(getString(R.string.registering));
 
         if (BuildConfig.DEBUG) {
             etUsername.setText("horace");
