@@ -4,6 +4,7 @@ import com.mirego.cschat.models.User;
 import com.mirego.cschat.models.request.CreateConversationRequest;
 import com.mirego.cschat.models.request.CreateMessageRequest;
 import com.mirego.cschat.models.request.LoginRequest;
+import com.mirego.cschat.models.request.RegisterRequest;
 import com.mirego.cschat.models.response.ConversationsResponse;
 
 import io.reactivex.Flowable;
@@ -13,6 +14,9 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface CSChatService {
+
+    @POST("api/users")
+    Flowable<User> register(@Body RegisterRequest registerRequest);
 
     @POST("api/login")
     Flowable<User> login(@Body LoginRequest loginRequest);

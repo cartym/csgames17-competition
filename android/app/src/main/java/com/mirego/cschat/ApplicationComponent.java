@@ -4,6 +4,7 @@ import com.mirego.cschat.activities.ConversationActivity;
 import com.mirego.cschat.activities.ConversationsActivity;
 import com.mirego.cschat.activities.HomeActivity;
 import com.mirego.cschat.activities.LoginActivity;
+import com.mirego.cschat.activities.RegisterActivity;
 
 import javax.inject.Singleton;
 
@@ -19,4 +20,6 @@ public interface ApplicationComponent {
     void inject(ConversationsActivity conversationsActivity);
 
     void inject(ConversationActivity conversationActivity);
+
+    void inject(RegisterActivity registerActivity);
 }

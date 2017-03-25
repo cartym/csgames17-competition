@@ -40,7 +40,7 @@ public class HomeActivity extends BaseActivity {
 
     @OnClick(R.id.btn_register)
     public void onRegisterClicked() {
-        Toast.makeText(this, getString(R.string.not_implemented_yet), Toast.LENGTH_LONG).show();
+        startActivity(new Intent(this, RegisterActivity.class));
     }
 
 }
