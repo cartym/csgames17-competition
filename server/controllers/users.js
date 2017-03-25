@@ -12,7 +12,7 @@ exports.list = function (req, res) {
 
 exports.getById = function (req, res) {
   let filter = {
-    '_id': req.params.id
+    '_id': req.params.user_id
   };
   let projection = {
     'password': 0

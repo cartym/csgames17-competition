@@ -12,5 +12,7 @@ module.exports = function (app) {
   app.get('/api/users/:user_id/conversations', conversations.list);
   app.get('/api/users/:user_id/conversations/:conversation_id', conversations.getById);
   app.post('/api/users/:user_id/conversations', conversations.create);
-  app.post('/api/users/:user_id/conversations/:conversation_id', conversations.addMessage)
+  app.post('/api/users/:user_id/conversations/:conversation_id', conversations.addMessage);
+
+  app.post('/api/auth/login', auth.login);
 };
